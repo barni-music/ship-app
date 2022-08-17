@@ -1,0 +1,7 @@
+[{
+  "key": "length",
+  "type": "input",
+  "templateOptions": {
+    "label": "длина"
+  }
+}]

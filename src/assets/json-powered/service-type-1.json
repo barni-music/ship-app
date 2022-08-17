@@ -1,0 +1,32 @@
+[{
+    "key": "serviceType",
+    "type": "select",
+    "templateOptions": {
+      "label": "город откуда"
+    }
+  },
+  {
+    "key": "lastName",
+    "type": "select",
+    "templateOptions": {
+      "label": "город куда"
+    }
+  },
+  {
+    "key": "patronim",
+    "type": "number",
+    "templateOptions": {
+      "label": "Вес посылки"
+    }
+  },
+  {
+    "key": "patronim",
+    "type": "number",
+    "templateOptions": {
+      "label": "Объем посылки",
+      "addonRight": {
+        "class": "fa fa-euro"
+      }
+    }
+  }
+]
