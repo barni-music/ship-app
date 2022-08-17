@@ -1,26 +1,26 @@
 [{
-    "key": "serviceType",
+    "key": "cityFromId",
     "type": "select",
     "templateOptions": {
       "label": "город откуда"
     }
   },
   {
-    "key": "lastName",
+    "key": "cityToId",
     "type": "select",
     "templateOptions": {
       "label": "город куда"
     }
   },
   {
-    "key": "patronim",
+    "key": "Kg",
     "type": "number",
     "templateOptions": {
       "label": "Вес посылки"
     }
   },
   {
-    "key": "patronim",
+    "key": "M3",
     "type": "number",
     "templateOptions": {
       "label": "Объем посылки",

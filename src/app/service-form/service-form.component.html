@@ -1,17 +1,10 @@
 <div style="margin-bottom: 20px">
-  <button *ngFor="let example of examples" (click)="loadExample(example)" class="btn"
-    [class.btn-primary]="type === example">
-    {{ example }}
-  </button>
-</div>
-
-<div style="margin-bottom: 20px">
   <label for="orders">Order</label>
   <!-- https://stackoverflow.com/questions/67123603/angular-error-ts2531-object-is-possibly-null -->
   <select (change)="onSelectChange($any($event.target).value)">
     <!-- https://stackoverflow.com/questions/983267/how-to-access-the-first-property-of-a-javascript-object -->
     <!-- Epic fail. Cannot use Object for some reason. -->
-    <option *ngFor="let option of selectOptions" [value]="option.value">
+    <option *ngFor="let option of selectOptions$" [value]="option.value">
       {{option.label}}
     </option>
   </select>

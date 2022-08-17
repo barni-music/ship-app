@@ -21,24 +21,24 @@ export class ServiceFormComponent {
     'package'
   ]
 
-  selectOptions: any;
+  selectOptions$: any;
 
   constructor(
     private userService: UserService,
     private http: HttpClient,
   ) {
     // Runs once when component component is loading
-    this.loadExample(this.examples[0]);
     this.populateSelect();
+    // console.log(this.selectOptions$);
+    // this.loadExample();
   }
 
-  loadExample(type: string) {
+  loadExample(serviceId: number) {
     // generates new form based on json
     // console.log(type);
     this.http.get<FormlyFieldConfig[]>(
-      `assets/json-powered/service-type-${type}.json`
+      `assets/json-powered/service-type-${serviceId}.json`
     ).subscribe(fields => {
-      this.type = type;
       this.form = new FormGroup({});
       this.options = {};
       this.fields = fields;
@@ -47,16 +47,28 @@ export class ServiceFormComponent {
   }
 
   onSelectChange(serviceOption: any) {
-    console.log(serviceOption);
-    this.loadExample(serviceOption);
+    serviceOption = parseInt(serviceOption) || null;
+    // console.log(serviceOption);
+    if (serviceOption) {
+      this.loadExample(serviceOption);
+    } else {
+      this.clearForm();
+    }
+  }
+
+  clearForm() {
+    this.form = new FormGroup({});
+    this.options = {};
+    this.model = {};
+    this.fields = [];
   }
 
   populateSelect() {
-    this.getServiceTypesObservable().subscribe((selectOptions: any) => {
-      this.selectOptions = selectOptions;
+    this.getServiceTypesObservable().subscribe((selectOptions$: any) => {
+      this.selectOptions$ = selectOptions$;
       // console.log(Object.values(selectOptions)[0]);
     });
-    
+
   }
 
   getServiceTypesObservable() {
@@ -70,14 +82,14 @@ export class ServiceFormComponent {
     }
   }
 
-  mapFields(fields: FormlyFieldConfig[]) {
-    return fields.map((f) => {
-      if (f.key === 'color') {
-        f.type = 'radio';
-        f.props!.options = this.userService.getColors();
-      }
+  // mapFields(fields: FormlyFieldConfig[]) {
+  //   return fields.map((f) => {
+  //     if (f.key === 'color') {
+  //       f.type = 'radio';
+  //       f.props!.options = this.userService.getColors();
+  //     }
 
-      return f;
-    });
-  }
+  //     return f;
+  //   });
+  // }
 }
