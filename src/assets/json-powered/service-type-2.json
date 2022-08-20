@@ -1,7 +1,11 @@
 [{
   "key": "length",
-  "type": "input",
+  "type": "number",
   "templateOptions": {
-    "label": "длина"
+    "label": "длина",
+    "required": true,
+    "addonRight": {
+      "text": "М"
+    }
   }
 }]

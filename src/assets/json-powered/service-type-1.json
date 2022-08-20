@@ -3,7 +3,8 @@
     "type": "input",
     "wrappers": ["form-field-horizontal"],
     "templateOptions": {
-      "label": "город откуда"
+      "label": "город откуда",
+      "required": true
     }
   },
   {
@@ -11,7 +12,8 @@
     "type": "input",
     "wrappers": ["form-field-horizontal"],
     "templateOptions": {
-      "label": "город куда"
+      "label": "город куда",
+      "required": true
     }
   },
   {
@@ -20,6 +22,7 @@
     "wrappers": ["form-field-horizontal"],
     "templateOptions": {
       "label": "Вес посылки",
+      "required": true,
       "addonRight": {
         "text": "Кг"
       }
@@ -31,6 +34,7 @@
     "wrappers": ["form-field-horizontal"],
     "templateOptions": {
       "label": "Объем посылки",
+      "required": true,
       "addonRight": {
         "text": "M3"
       }
