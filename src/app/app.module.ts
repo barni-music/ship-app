@@ -11,7 +11,7 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 
 // Services
-import { UserService } from './user.service';
+import { ApiService } from './api.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormlyHorizontalWrapper } from './service-form/horizontal-wrapper';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -36,7 +36,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ServiceFormComponent,
     FormlyHorizontalWrapper
   ],
-  providers: [UserService],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

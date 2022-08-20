@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
-import { UserService } from '../user.service';
+import { ApiService } from '../api.service';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -24,7 +24,7 @@ export class ServiceFormComponent {
   selectOptions$: any;
 
   constructor(
-    private userService: UserService,
+    private userService: ApiService,
     private http: HttpClient,
   ) {
     // Runs once when component component is loading
