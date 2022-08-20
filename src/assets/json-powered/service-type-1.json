@@ -1,13 +1,15 @@
 [{
     "key": "cityFromId",
-    "type": "select",
+    "type": "input",
+    "wrappers": ["form-field-horizontal"],
     "templateOptions": {
       "label": "город откуда"
     }
   },
   {
     "key": "cityToId",
-    "type": "select",
+    "type": "input",
+    "wrappers": ["form-field-horizontal"],
     "templateOptions": {
       "label": "город куда"
     }
@@ -15,17 +17,22 @@
   {
     "key": "Kg",
     "type": "number",
+    "wrappers": ["form-field-horizontal"],
     "templateOptions": {
-      "label": "Вес посылки"
+      "label": "Вес посылки",
+      "addonRight": {
+        "text": "Кг"
+      }
     }
   },
   {
     "key": "M3",
     "type": "number",
+    "wrappers": ["form-field-horizontal"],
     "templateOptions": {
       "label": "Объем посылки",
       "addonRight": {
-        "class": "fa fa-euro"
+        "text": "M3"
       }
     }
   }

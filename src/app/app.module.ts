@@ -13,12 +13,10 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 // Services
 import { UserService } from './user.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormlyHorizontalWrapper } from './service-form/horizontal-wrapper';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ServiceFormComponent
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -26,8 +24,17 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 
     // Formly
     ReactiveFormsModule,
-    FormlyModule.forRoot(),
+    FormlyModule.forRoot({
+      wrappers: [{ name: 'form-field-horizontal', component: FormlyHorizontalWrapper }],
+      validationMessages: [{ name: 'required', message: 'This field is required' }],
+    }),
     FormlyBootstrapModule,
+    NgbModule,
+  ],
+  declarations: [
+    AppComponent,
+    ServiceFormComponent,
+    FormlyHorizontalWrapper
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

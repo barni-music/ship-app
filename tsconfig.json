@@ -7,7 +7,12 @@
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
+
+    // Formly
+    // https://stackoverflow.com/questions/70106472/property-fname-comes-from-an-index-signature-so-it-must-be-accessed-with-fn
+    "noPropertyAccessFromIndexSignature": false,
+    // "noPropertyAccessFromIndexSignature": true,
+
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
@@ -21,7 +26,8 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
